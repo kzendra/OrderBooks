@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderBooks", "OrderBooks\OrderBooks.csproj", "{4F4294B9-F6F6-425A-A622-56F1C1FEEAAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBooksTests", "OrderBooksTests\OrderBooksTests.csproj", "{0B6C9569-0E91-43C0-828F-2B8BCC248AC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F4294B9-F6F6-425A-A622-56F1C1FEEAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4294B9-F6F6-425A-A622-56F1C1FEEAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4294B9-F6F6-425A-A622-56F1C1FEEAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4294B9-F6F6-425A-A622-56F1C1FEEAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B6C9569-0E91-43C0-828F-2B8BCC248AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6C9569-0E91-43C0-828F-2B8BCC248AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6C9569-0E91-43C0-828F-2B8BCC248AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6C9569-0E91-43C0-828F-2B8BCC248AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1CDAAC3-F0AA-4039-9BF6-8E7FCEC15F97}
+	EndGlobalSection
+EndGlobal
