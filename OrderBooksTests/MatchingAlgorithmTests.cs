@@ -34,6 +34,13 @@ namespace OrderBooks.Tests
             RunTest();
         }
 
+        [TestMethod()]
+        public void ExecuteTest3()
+        {
+            TestScenario3();
+            RunTest();
+        }
+
         private void RunTest() 
         {
             matchingAlgorithm = new MatchingAlgorithm();
@@ -111,6 +118,41 @@ namespace OrderBooks.Tests
                 new OrderMatch(new Guid("00000000000000000000000000000004"),new Guid("00000000000000000000000000000008")) {BTC = 40, Price = 1000, EUR = 40000 },
             };
         }
+
+
+        private void TestScenario3()
+        {
+            Asks = new List<Order>()
+            {
+                new Order(){Id = new Guid("00000000000000000000000000000001"), Time = DateTime.Now, Type = "Sell", Kind = "Limit", Amount = 2, Price = 4000}, //2
+                new Order(){Id = new Guid("00000000000000000000000000000002"), Time = DateTime.Now, Type = "Sell", Kind = "Limit", Amount = 5, Price = 3500}, //5
+                new Order(){Id = new Guid("00000000000000000000000000000003"), Time = DateTime.Now, Type = "Sell", Kind = "Limit", Amount = 20, Price = 3000}, //20
+                new Order(){Id = new Guid("00000000000000000000000000000004"), Time = DateTime.Now, Type = "Sell", Kind = "Limit", Amount = 50, Price = 2800}, //50
+            };
+            Asks = Asks.OrderByDescending(x => x.Price).
+                ThenBy(x => x.Time).
+                ToList();
+
+            Bids = new List<Order>()
+            {
+                new Order(){Id = new Guid("00000000000000000000000000000005"), Time = DateTime.Now, Type = "Buy", Kind = "Limit", Amount = 5000, Price = 2500}, //2
+                new Order(){Id = new Guid("00000000000000000000000000000006"), Time = DateTime.Now, Type = "Buy", Kind = "Limit", Amount = 10000, Price = 2000}, //5
+                new Order(){Id = new Guid("00000000000000000000000000000007"), Time = DateTime.Now, Type = "Buy", Kind = "Limit", Amount = 30000, Price = 1500}, //20
+                new Order(){Id = new Guid("00000000000000000000000000000008"), Time = DateTime.Now, Type = "Buy", Kind = "Limit", Amount = 50000, Price = 1000}, //50
+            };
+            Bids = Bids.OrderByDescending(x => x.Price).
+                ThenBy(x => x.Time).
+                ToList();
+
+            Matches = new List<OrderMatch>()
+            {
+                //new OrderMatch(new Guid("00000000000000000000000000000001"),new Guid("00000000000000000000000000000005")) {BTC = 2, Price = 2500, EUR = 5000 },
+                //new OrderMatch(new Guid("00000000000000000000000000000002"),new Guid("00000000000000000000000000000006")) {BTC = 5, Price = 2000, EUR = 10000 },
+                //new OrderMatch(new Guid("00000000000000000000000000000003"),new Guid("00000000000000000000000000000007")) {BTC = 20, Price = 1500, EUR = 30000 },
+                //new OrderMatch(new Guid("00000000000000000000000000000004"),new Guid("00000000000000000000000000000008")) {BTC = 50, Price = 1000, EUR = 50000 },
+            };
+        }
+
 
 
     }
