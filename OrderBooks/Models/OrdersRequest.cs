@@ -6,7 +6,7 @@ namespace OrderBooks.Models
     public class OrdersRequest
     {
         public DateTime AcqTime { get; set; }
-        public IList<Bid> Bids { get; set; }
-        public IList<Ask> Asks { get; set; }
+        public List<Bid> Bids { get; set; }
+        public List<Ask> Asks { get; set; }
     }
 }

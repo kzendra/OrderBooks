@@ -3,9 +3,9 @@ using System.IO;
 
 namespace OrderBooks
 {
-    public class ReadData
+    public class ReadDataFile
     {
-        public ReadData(string fileName)
+        public ReadDataFile(string fileName)
         {
             _fileName = fileName;
         }
