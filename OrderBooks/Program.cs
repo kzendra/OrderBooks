@@ -4,7 +4,7 @@ namespace OrderBooks
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var x = new ExecuteWork();
             x.MatchDataFromFile("..\\..\\..\\..\\OrderBooks\\order_books_data.json");

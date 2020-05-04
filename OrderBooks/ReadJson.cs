@@ -7,16 +7,18 @@ namespace OrderBooks
 {
     public class ReadJson
     {
-        private List<string> rows;
+        private readonly List<string> rows;
 
         private OrdersRequest OrdersRequest { get; set; }
 
         public ReadJson(List<string> rows)
         {
             this.rows = rows;
-            OrdersRequest = new OrdersRequest();
-            OrdersRequest.Asks = new List<Ask>();
-            OrdersRequest.Bids = new List<Bid>();
+            OrdersRequest = new OrdersRequest
+            {
+                Asks = new List<Ask>(),
+                Bids = new List<Bid>()
+            };
         }
 
         public void Execute()

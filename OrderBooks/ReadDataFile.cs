@@ -9,20 +9,18 @@ namespace OrderBooks
         {
             _fileName = fileName;
         }
-        private string _fileName;// = "order_books_data.json";
+        private readonly string _fileName;// = "order_books_data.json";
         public List<string> Rows { get; private set; }
 
         public void ReadFile()
         {
             Rows = new List<string>();
-            using (StreamReader file = new StreamReader(_fileName))
+            using StreamReader file = new StreamReader(_fileName);
+            string line;
+            while ((line = file.ReadLine()) != null)
             {
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    ParseLine(line);
+                ParseLine(line);
 
-                }
             }
         }
 
